@@ -2294,7 +2294,7 @@ bool crnd_get_level_info(const void* pData, uint32 data_size, uint32 level_index
   pLevel_info->m_faces = pHeader->m_faces;
   pLevel_info->m_blocks_x = (width + 3) >> 2;
   pLevel_info->m_blocks_y = (height + 3) >> 2;
-  pLevel_info->m_bytes_per_block = ((pHeader->m_format == cCRNFmtDXT1) || (pHeader->m_format == cCRNFmtDXT5A)) ? 8 : 16;
+  pLevel_info->m_bytes_per_block = ((pHeader->m_format == cCRNFmtDXT1) || (pHeader->m_format == cCRNFmtDXT5A) || (pHeader->m_format == cCRNFmtETC1) || (pHeader->m_format == cCRNFmtETC1S) || (pHeader->m_format == cCRNFmtETC2)) ? 8 : 16;
   pLevel_info->m_format = static_cast<crn_format>((uint32)pHeader->m_format);
 
   return true;
